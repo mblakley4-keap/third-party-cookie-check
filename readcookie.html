@@ -1,9 +1,11 @@
 <html>
     <body>
         <script>
-            if (!window.parent) return;
-            const message = /thirdparty=yes/.test(document.cookie) ? '3pc.supported' : '3pc.unsupported';
-            window.parent.postMessage(message, '*');
+            (function() {
+                if (!window.parent) return;
+                const message = /thirdparty=yes/.test(document.cookie) ? '3pc.supported' : '3pc.unsupported';
+                window.parent.postMessage(message, '*');
+            })()
         </script>
     </body>
 </html>
