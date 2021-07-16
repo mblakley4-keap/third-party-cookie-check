@@ -4,6 +4,7 @@
             (function() {
                 if (!window.parent) return;
                 const message = /thirdparty=yes/.test(document.cookie) ? '3pc.supported' : '3pc.unsupported';
+                console.log('message: ',message);
                 window.parent.postMessage(message, '*');
             })()
         </script>
