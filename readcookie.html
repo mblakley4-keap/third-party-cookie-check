@@ -2,8 +2,12 @@
     <body>
         <script>
             (function() {
-                if (!window.parent) return;
+                if (!window.parent) {
+                    console.log('no parent window');
+                    return;
+                }
                 const message = /thirdparty=yes/.test(document.cookie) ? '3pc.supported' : '3pc.unsupported';
+                console.log('message: ', message);
                 window.parent.postMessage(message, '*');
             })()
         </script>
